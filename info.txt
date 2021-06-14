@@ -1,0 +1,6 @@
+url - mysql://bf8bbd806bdb73:bfb1ccb3@us-cdbr-east-04.cleardb.com/heroku_170eef10b494f8d?reconnect=true
+
+UN - bf8bbd806bdb73
+PW - bfb1ccb3
+
+host - us-cdbr-east-04.cleardb.com

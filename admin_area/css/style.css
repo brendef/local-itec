@@ -1,0 +1,50 @@
+.offcanvas-body ul {
+  list-style: none;
+}
+
+.offcanvas-body ul li {
+  margin: 20px 0px;
+}
+
+
+.offcanvas-body ul li a {
+  text-decoration: none;
+  color: black;
+
+}
+
+
+.left {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: lightgreen;
+
+  color: white;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+@media all and (max-width: 992px) {
+  .left {
+    display: none;
+  }
+  .right {
+    padding-top: 20%;
+  }
+  }
+
+  /* Not logged in page */
+
+  .not-loggedin-page {
+    display: grid;
+    height: 80vh;
+    align-items: center;
+  }
+
+.trash-icon  {
+  border: 1px solid black;
+}
