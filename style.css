@@ -23,6 +23,10 @@ body{
 
 }
 
+/* 
+* This block of CSS makes the categories at the top of the home page stretch across the top
+* as well as makes it horizontally scrollable   
+*/
 .categories {
   margin-top: 30px;
   display: flex;
@@ -39,12 +43,20 @@ body{
   display: none;
 }
 
+/* 
+* This is the code for the food being displayed on the home screen and ensures that the
+* contents matches the other cards and are spaced evenly 
+*/
 .card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+/* 
+* This make the add to card button change colour (Go transparent) when 
+* the user hovers over it
+*/
 .add-to-cart-btn:hover {
   background-color: transparent;
   color: black;
@@ -95,6 +107,10 @@ body{
   align-items: center;
 }
 
+/* 
+* This block of code is a media query and is responsable for making the Login and Register pages responsive.
+* So that they will legible on a mobile phone 
+*/
 @media all and (max-width: 992px) {
   .left {
     display: none;

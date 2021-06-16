@@ -2,8 +2,8 @@
 
 <div class="container account-page">
     <?php if(isset($_SESSION['user_id'])) { ?>
-    <div class="row">
-        <div class="col-lg-6">
+    <div class="row mt-5">
+        <div class="col-lg-6 mt-4">
             <?php 
                 if(isset($_GET['action'])) {
                     $action = $_GET['action'];
@@ -12,9 +12,9 @@
                 }
 
                 switch($action) {
-                    case "order";
-                        echo $action;
-                        break;
+                    // case "order";
+                    //     echo $action;
+                    //     break;
 
                     case "edit_account";
                         include('./user/edit_account.php');
@@ -29,20 +29,20 @@
                     break;
 
                     default;
-                        echo "Do some other stuff";
+                        echo "Please view a different page";
                 }
 
                 
             ?>
         </div>
-        <div class="col-lg-6">
-            <ul>
-                <li><a href="user_account.php?action=order">Active Order</a></li>
-                <li><a href="user_account.php?action=edit_account">Edit Account</a></li>
-                <li><a href="user_account.php?action=change_password">Change Password</a></li>
-                <li><a href="user_account.php?action=delete_account">Delete Account</a></li>
-                <li><a href="logout.php">Logout</a></li>
-            </ul>
+        <div class="col-lg-6 mt-5">
+            <div class="list-group">
+                <!-- <li><a href="user_account.php?action=order">Active Order</a></li> -->
+                <li type="button"><a class="list-group-item" href="user_account.php?action=edit_account">Edit Account</a></li>
+                <li type="button"><a class="list-group-item" href="user_account.php?action=change_password">Change Password</a></li>
+                <li type="button"><a class="list-group-item" href="user_account.php?action=delete_account">Delete Account</a></li>
+                <li type="button"><a class="list-group-item" href="logout.php">Logout</a></li>
+            </div>
             
         </div>
     </div>

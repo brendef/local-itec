@@ -45,36 +45,23 @@
 
         ?>                     
         <div class="container mb-2">
-            <div class="accordion" id="accordionFlushExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Collapse<?php echo $product_name; ?>" aria-expanded="false" aria-controls="flush-collapseOne">
-                        <?php echo $product_name; ?>
-                    </button>
-                    </h2>
-                    <div id="Collapse<?php echo $product_name; ?>" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            <div class="row">
-                                <div class="col-lg-1">
-                                    <input class="checkbox-remove" type="checkbox" name="remove[]" value="<?php echo $product_id; ?>" />
-                                </div>
-                                <div class="col-lg-2">
-                                    <?php echo "<img src='admin_area/product_images/$product_image' style='width:100%; height: 150px;' />"; ?> 
-                                </div>
-                                <div class="col-lg-9">
-                                    <div class="accordion-inner">
-                                        <h5><?php echo $product_name; ?></h5>
-                                        <p><?php echo $product_description; ?></p>
-                                        <p class="card-text" ><small class="text-muted" name="quantity"> Quanitity: <?php echo $quantity; ?></small></p>
-                                        <div class="col-lg-3"> R <?php echo $item_price; ?> </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+        <div class="card mb-3" style="max-width: 1000px;">
+            <div class="row g-0">
+                <div class="col-md-4 d-flex align-items-center">
+                <!-- <img src="..." alt="..."> -->
+                <?php echo "<img src='admin_area/product_images/$product_image' style='width:70%; height: 150px;' />"; ?>
+                </div>
+                <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $product_name; ?></h5>
+                    <p class="card-text"><?php echo $product_description; ?></p>
+                    <p class="card-text">R <?php echo $item_price; ?></p>
+                   <p><input class="checkbox-remove" type="checkbox" name="remove[]" value="<?php echo $product_id; ?>" /> Remove</p>
+                </div>
                 </div>
             </div>
-        </div>   
+        </div> 
         <?php } } ?> 
             <h4 class="d-flex flex-column align-items-end mx-2 my-3">Cart total price: R<?php total_price();?> </h4> 
             <div class="container form-controls mt-4">
@@ -83,7 +70,7 @@
                     <button type="submit" name="continue" class="btn btn-link p-0">Continue Shopping</button>
                 </div>
                 <div>
-                    <button id="remove-thing" type="submit" name="update_cart"class="btn btn-outline-danger d-none"> <i class="bi bi-trash"></i> Remove </button>
+                    <button id="remove-thing" type="submit" name="update_cart"class="mx-2 btn btn-outline-danger d-none"> <i class="bi bi-trash"></i> Remove </button>
                     <button type="submit" name="checkout" class="btn btn-dark">Checkout</button>
                 </div>
             </div>
@@ -125,9 +112,6 @@
                         } else {
                             echo "<script> window.open('login.php', '_self') </script>";
                         }
-
-                        
-
                     }
                 }
             }

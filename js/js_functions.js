@@ -1,34 +1,8 @@
-var firebaseConfig = {
-  apiKey: "AIzaSyDDu0GW93EoRaIvH0JCqqzJwytGWhQaU7o",
-  authDomain: "fishermans-bay-images.firebaseapp.com",
-  projectId: "fishermans-bay-images",
-  storageBucket: "fishermans-bay-images.appspot.com",
-  messagingSenderId: "724470534701",
-  appId: "1:724470534701:web:cf956f8c4c4955e0019ea4"
-};
-Firebase.initializeApp(firebaseConfig);
-const storage = firebase.storage();
 
-function uploadImage() {
-  const image = document.getElementById('product_image').files[0];
-  const imageName = image.name;
-
-  const storageRef = storage.ref('images/' + imageName);
-  const upload = storageRef.put(image);
-
-  upload.on('state_changed', function(snapshot) {
-      let progress = (snapshot.bytesTransfered / snapshot.totalBytes) * 100;
-      console.log('progress' + progress);
-  }, function(error) {
-      console.log(error);
-  }, function() {
-      upload.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-          console.log(downloadUrl);
-      });
-  });
-}
-
+// This is run when the remove check box's in the cart page are selected and is responsable for showing the 
+// remove product button 
 Array.from(document.getElementsByClassName('checkbox-remove')).forEach(function(element) {
+  console.log('selected');
     element.addEventListener('change', (event) => {
         if(event.target.checked){
             document.getElementById('remove-thing').classList.remove("d-none");
@@ -36,10 +10,8 @@ Array.from(document.getElementsByClassName('checkbox-remove')).forEach(function(
     });
 });
 
-// if (document.getElementById('password1').value === '' && document.getElementById('password2').value === '') {
-//     document.getElementById('registerButton').disabled = true;
-// }
-
+// This function ensures that the passwords (password and confirm password) 
+//on the register pages both match
 const check = function() {
     if (document.getElementById('password1').value ==
         document.getElementById('password2').value) {
@@ -54,6 +26,8 @@ const check = function() {
     }
   }
 
+  // this function reveals the password to the user when they click on the 
+  // 'show password check box on the login and register page'
 const handleShowPassword = function() {
     const input1 = document.getElementById("password1");
     const input2 = document.getElementById("password2");

@@ -2,8 +2,8 @@
     <h4>Confirm delete</h4>
     <p>Are you sure you want to delete your account</p>
     <form action="" method="post">
-    <input type="submit" value="yes" name="yes" />
-    <input type="submit" value="no" name="no"/>
+    <button class="btn btn-dark" type="submit" value="yes" name="yes"> Yes </button>
+    <button class="btn btn-danger" type="submit" value="no" name="no"> No </button>
     </form>
 </div>
 

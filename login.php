@@ -59,7 +59,7 @@
 
             $_SESSION['email'] = $email;
             echo "<script> alert('Login successful') </script>";
-            echo "<script> window.open('user_account.php', '_self') </script>";
+            echo "<script> window.open('index.php', '_self') </script>";
         } else {
 
             $_SESSION['user_id'] = $row_login['id'];
